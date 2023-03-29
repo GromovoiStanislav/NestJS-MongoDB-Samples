@@ -1,0 +1,1 @@
+## NestJS: Abstract MongoDB Repository
