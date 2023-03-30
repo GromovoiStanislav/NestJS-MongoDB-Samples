@@ -2,10 +2,10 @@ import { Test } from "@nestjs/testing"
 import { Connection } from "mongoose"
 import * as request from 'supertest';
 
-import { AppModule } from "../../../app.module"
-import { DatabaseService } from "../../../database/database.service";
-import { userStub } from "../stubs/user.stub";
-import { CreateUserDto } from "../../dto/create-user.dto";
+import { AppModule } from "../../app.module"
+import { DatabaseService } from "../../database/database.service";
+import { userStub } from "./stubs/user.stub";
+import { CreateUserDto } from "../dto/create-user.dto";
 
 describe('UsersController', () => {
   let dbConnection: Connection;

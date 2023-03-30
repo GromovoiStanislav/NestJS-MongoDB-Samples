@@ -6,26 +6,32 @@ import { randomUUID } from "node:crypto";
 
 @Injectable()
 export class UsersService {
-    constructor(private readonly usersRepository: UsersRepository) {}
+  constructor(private readonly usersRepository: UsersRepository) {
+  }
 
-    async getUserById(userId: string): Promise<User> {
-        return this.usersRepository.findOne({ userId },)
-    }
+  async getUserById(userId: string): Promise<User> {
+    return this.usersRepository.findOne({ userId });
+  }
 
-    async getUsers(): Promise<User[]> {
-        return this.usersRepository.find({});
-    }
+  async getUsers(): Promise<User[]> {
+    return this.usersRepository.find({});
+  }
 
-    async createUser(email: string, age: number): Promise<User> {
-        return this.usersRepository.create({
-            userId: randomUUID(),
-            email,
-            age,
-            favoriteFoods: []
-        })
-    }
+  async createUser(email: string, age: number): Promise<User> {
+    return this.usersRepository.create({
+      userId: randomUUID(),
+      email,
+      age,
+      favoriteFoods: []
+    });
+  }
 
-    async updateUser(userId: string, userUpdates: UpdateUserDto): Promise<User> {
-        return this.usersRepository.findOneAndUpdate({ userId }, userUpdates);
-    }
+  async updateUser(userId: string, userUpdates: UpdateUserDto): Promise<User> {
+    return this.usersRepository.findOneAndUpdate({ userId }, userUpdates);
+  }
+
+  async deleteUser(userId: string): Promise<User> {
+    return this.usersRepository.findOneAndDelete({ userId });
+  }
+
 }

@@ -51,4 +51,8 @@ export abstract class AbstractRepository<TDocument extends Document> {
     return deleteResult.deletedCount >= 1;
   }
 
+  async findOneAndDelete(filterQuery: FilterQuery<TDocument>): Promise<TDocument> {
+    return  this.model.findOneAndDelete(filterQuery);
+  }
+
 }
