@@ -3,7 +3,7 @@ import { InjectModel } from "@nestjs/mongoose";
 import { FilterQuery, Model } from "mongoose";
 
 import { User, UserDocument } from "./schemas/user.schema";
-import { EntityRepository } from "./database/entity.repository";
+import { EntityRepository } from "../database/entity.repository";
 
 
 @Injectable()
