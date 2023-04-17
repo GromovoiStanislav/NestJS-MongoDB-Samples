@@ -1,1 +1,5 @@
-export class CampersQuery {}
+export class CamperQuery {
+  constructor(
+    public readonly camperId: string,
+  ) {}
+}
