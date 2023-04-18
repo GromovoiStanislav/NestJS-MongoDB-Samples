@@ -35,7 +35,7 @@ export class Camper extends AggregateRoot {
     if (allergiesLower.includes('chocolate')) {
       throw new BadRequestException('Allergy may not be chocolate.');
     }
-    this.allergies = allergies;
+    this.allergies = allergiesLower;
   }
 
 }
