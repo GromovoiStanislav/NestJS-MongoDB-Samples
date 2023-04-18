@@ -10,6 +10,7 @@ import { CamperCommandHandlers } from "./commands";
 import { CamperEventHandlers } from "./events";
 import { CamperQueryHandlers } from "./queries";
 import { CamperDtoRepository } from "./db/camper-dto.repository";
+import { CamperSagas } from "./sagas/camper.sagas";
 
 
 @Module({
@@ -31,6 +32,7 @@ import { CamperDtoRepository } from "./db/camper-dto.repository";
     ...CamperCommandHandlers,
     ...CamperEventHandlers,
     ...CamperQueryHandlers,
+	CamperSagas,
   ]
 })
 export class CampersModule {}
